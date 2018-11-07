@@ -35,7 +35,6 @@ install:
   - curl -Ls https://git.io/sbt > ~/bin/sbt
   - chmod a+x ~/bin/sbt
   - curl -sSL https://get.haskellstack.org/ | sh
-  - stack setup > /dev/null # This installs the whole GHC to an isolated location!
   - curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
   - chmod a+x ~/bin/repo
   - wget -q https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip

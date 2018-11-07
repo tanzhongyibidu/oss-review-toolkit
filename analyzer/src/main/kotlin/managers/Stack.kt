@@ -91,7 +91,7 @@ class Stack(analyzerConfig: AnalyzerConfiguration, repoConfig: RepositoryConfigu
             // Delete any left-overs from interrupted stack runs.
             File(workingDir, ".stack-work").safeDeleteRecursively()
 
-            return run(workingDir, *command)
+            return run(workingDir, "--no-install-ghc", "--skip-ghc-check", "--skip-msys", *command)
         }
 
         fun mapParentsToChildren(scope: String): Map<String, List<String>> {
