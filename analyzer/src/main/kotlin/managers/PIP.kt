@@ -179,7 +179,7 @@ class PIP(name: String, analyzerConfig: AnalyzerConfiguration, repoConfig: Repos
         return process
     }
 
-    override fun prepareResolution(definitionFiles: List<File>) =
+    override fun beforeResolution(definitionFiles: List<File>) =
             VirtualEnv.checkVersion(ignoreActualVersion = analyzerConfig.ignoreToolVersions)
 
     override fun resolveDependencies(definitionFile: File): ProjectAnalyzerResult? {

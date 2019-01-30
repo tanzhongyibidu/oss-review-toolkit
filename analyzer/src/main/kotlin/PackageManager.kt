@@ -177,9 +177,9 @@ abstract class PackageManager(
     open fun mapDefinitionFiles(definitionFiles: List<File>): List<File> = definitionFiles
 
     /**
-     * Optional preparation step for dependency resolution, like checking for prerequisites.
+     * Optional step to run before dependency resolution, like checking for prerequisites.
      */
-    protected open fun prepareResolution(definitionFiles: List<File>) = Unit
+    protected open fun beforeResolution(definitionFiles: List<File>) = Unit
 
     /**
      * Return a tree of resolved dependencies (not necessarily declared dependencies, in case conflicts were resolved)
@@ -188,7 +188,7 @@ abstract class PackageManager(
     open fun resolveDependencies(analyzerRoot: File, definitionFiles: List<File>): ResolutionResult {
         val result = mutableMapOf<File, ProjectAnalyzerResult>()
 
-        prepareResolution(definitionFiles)
+        beforeResolution(definitionFiles)
 
         definitionFiles.forEach { definitionFile ->
             log.info { "Resolving $managerName dependencies for '$definitionFile'..." }
