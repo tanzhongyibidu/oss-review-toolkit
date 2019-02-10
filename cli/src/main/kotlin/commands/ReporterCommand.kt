@@ -127,6 +127,7 @@ object ReporterCommand : CommandWithHelp() {
         absoluteOutputDir.safeMkdirs()
 
         reports.forEach { reporter, file ->
+            @Suppress("TooGenericExceptionCaught")
             try {
                 reporter.generateReport(
                         ortResult,
