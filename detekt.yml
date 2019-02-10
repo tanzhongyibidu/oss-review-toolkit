@@ -1,21 +1,20 @@
-# Configuration of Detekt rule sets, see: https://github.com/arturbosch/detekt#rulesets
+# Configuration of detekt rule sets, see https://arturbosch.github.io/detekt/comments.html.
+# This file only lists the differences to the default configuration at
+# https://github.com/arturbosch/detekt/blob/master/detekt-cli/src/main/resources/default-detekt-config.yml.
 
 build:
   maxIssues: 0
   weights:
     comments: 0
 
-comments:
-  CommentOverPrivateMethod:
-    active: false
-  CommentOverPrivateProperty:
-    active: false
-
 complexity:
   LargeClass:
     threshold: 150
-  NestedBlockDepth:
-    threshold: 4
+
+formatting:
+  autoCorrect: false
+  NoItParamInMultilineLambda:
+    active: false
 
 performance:
   SpreadOperator:
@@ -24,17 +23,11 @@ performance:
 style:
   ForbiddenComment:
     active: false
-  MaxLineLength:
-    active: true
-    maxLineLength: 120
-  NewLineAtEndOfFile:
-    active: true
   SpacingBetweenPackageAndImports:
     active: true
   UnusedImports:
     active: true
   WildcardImport:
-    active: true
     excludeImports: '
       ch.frankel.slf4k.*,
       com.here.ort.analyzer.managers.*,
