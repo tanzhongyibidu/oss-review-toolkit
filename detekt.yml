@@ -24,6 +24,8 @@ formatting:
   autoCorrect: false
   NoItParamInMultilineLambda:
     active: false
+  ParameterListWrapping:
+    active: false
 
 performance:
   SpreadOperator:
