@@ -66,6 +66,12 @@ data class VcsInfo(
         val path: String = "",
 
         /**
+         *
+         */
+        @JsonInclude(JsonInclude.Include.NON_NULL)
+        val manifestOverrideUrl: String? = null,
+
+        /**
          * A map that holds arbitrary data. Can be used by third-party tools to add custom data to the model.
          */
         @JsonInclude(JsonInclude.Include.NON_EMPTY)
