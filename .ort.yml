@@ -1,0 +1,12 @@
+excludes:
+  paths:
+  - pattern: "spdx-utils/src/main/resources/{exceptions,licenserefs,licenses}/**"
+    reason : "DATA_FILE_OF"
+    comment: "These licenses are used for generating license notes and do not apply to the OSS Review Toolkit."
+  - pattern: "analyzer/src/funTest/assets/projects/**"
+    reason : "TEST_TOOL_OF"
+    comment: "These projects are only used for testing and are not part of the distribution."
+  scopes:
+  - name: "(test|funTest)"
+    reason: "TEST_TOOL_OF"
+    comment: "These are test dependencies which are not part of the binary distribution."
